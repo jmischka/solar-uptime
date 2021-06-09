@@ -116,11 +116,11 @@ const SelectStyles = styled.div`
     }
 
     label[for="importance"].Medium:after {
-        background-color: #F58516;
+        background-color: #F2911B;
     }
 
     label[for="importance"].Low:after {
-        background-color: #F5B50A;
+        background-color: #FFD700;
     }
 
     input {
