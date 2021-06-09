@@ -14,6 +14,11 @@ function useForm(initialState = {}) {
             ...inputs,
             [e.target.name]: e.target.value
         });
+        if (e.target.name === 'importance') {
+            let classAttr = e.target.parentElement.className;
+            e.target.parentElement.classList.remove(classAttr);
+            e.target.parentElement.classList.add(e.target.value);
+        }
     }
 
     const handleRangeChange = (e) => {
@@ -22,10 +27,10 @@ function useForm(initialState = {}) {
             [e.target.name]: e.target.value
         });
         // SET RANGE TOOLTIPS ON CHANGE
-        let percent = (e.target.value - e.target.min) / (e.target.max - e.target.min) * 100;
-        e.target.nextElementSibling.style.left = `calc(${percent}% - 60px)`;   
+        let percent = (e.target.value - e.target.min) / (e.target.max - e.target.min) * 100;       
+        e.target.nextElementSibling.style.left = `calc(${percent}% - 55px)`;   
         // SET RANGE PROGRESS ON CHANGE
-        e.target.style.setProperty("--webkitProgressPercent", `${percent}%`);      
+        e.target.style.setProperty("--webkitProgressPercent", `${percent}%`);
     }
 
     const handleCancelButton = (e) => {

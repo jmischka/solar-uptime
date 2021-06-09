@@ -20,6 +20,7 @@ const SelectStyles = styled.div`
     label {
         position: relative;
         display: block;
+        margin: 0 0 0 0;
         width: 31%;
         font-size: 1.4em;
         font-weight: 600;
@@ -68,6 +69,14 @@ const SelectStyles = styled.div`
             line-height: 1.4;
             color: #B9B9B9;
         }
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            margin: 0 0 14px 0;
+            &:last-child {
+                margin: 0 0 0 0;
+            }
+        }
     }
 
     select {
@@ -86,6 +95,32 @@ const SelectStyles = styled.div`
         background-size: 10px 10px;
         background-position: top 50% right 9px;
         background-repeat: no-repeat;
+    }
+
+    select.custom-select {
+        padding: 0 6px 0 20px;
+    }
+
+    label[for="importance"]:after {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 36px;
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+    }
+
+    label[for="importance"].High:after {
+        background-color: #FF3B30;
+    }
+
+    label[for="importance"].Medium:after {
+        background-color: #F58516;
+    }
+
+    label[for="importance"].Low:after {
+        background-color: #F5B50A;
     }
 
     input {

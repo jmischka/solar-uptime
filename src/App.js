@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   const [showForm, setShowForm] = useState(true);
   const [success, setSuccess] = useState(false);
-  const [inputs, handleInputChange, handleRangeChange, handleCancelButton] = useForm({name: '', type: 'HTTP', url: '', importance: 'low', down: '20', alert: '5', resend: '0'});
+  const [inputs, handleInputChange, handleRangeChange, handleCancelButton] = useForm({name: '', type: 'HTTP', url: '', importance: 'High', down: '20000', alert: '5', resend: '0'});
 
   // SET RANGE TOOLTIPS AFTER SHOWFORM TRIGGER
   useEffect(() => {

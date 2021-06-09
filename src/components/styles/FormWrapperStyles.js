@@ -21,7 +21,7 @@ const FormWrapperStyles = styled.div`
     transform: translate(-50%,-50%);
     animation: 1s ${fadeIn} ease-out;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 768px) {
         position: relative;
         margin: 0 0 0 0;
         left: 0;

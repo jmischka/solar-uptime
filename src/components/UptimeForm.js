@@ -32,9 +32,9 @@ function UptimeForm(props) {
                     URL
                     <input type="url" id="url" name="url" value={props.inputs.url} placeholder={`${props.inputs.type.toLowerCase()}://`} onChange={props.handleInputChange} />
                 </label>
-                <label htmlFor="importance">
+                <label className="High" htmlFor="importance">
                     Importance
-                    <select id="importance" name="importance" value={props.inputs.importance} onChange={props.handleInputChange}>
+                    <select id="importance" className="custom-select" name="importance" value={props.inputs.importance} onChange={props.handleInputChange}>
                         <option>Low</option>
                         <option>Medium</option>
                         <option>High</option>
@@ -46,8 +46,8 @@ function UptimeForm(props) {
                 <label htmlFor="down">
                     Consider down after
                     <div>
-                        <input type="range" id="down" name="down" min="1" max="30" step="1" value={props.inputs.down} onChange={props.handleRangeChange} />
-                        <span>{`${props.inputs.down}s timeout`}</span>
+                        <input type="range" id="down" name="down" min={props.inputs.down < 10000 ? "100" : "1000"} max="30000" step={props.inputs.down < 10000 ? "100" : "1000"} value={props.inputs.down} onChange={props.handleRangeChange} />
+                        <span>{props.inputs.down < 9999 ? `${props.inputs.down * .1}ms timeout` : `${props.inputs.down * .001}s timeout`}</span>
                     </div>
                 </label>
                 <label htmlFor="alert">
@@ -61,7 +61,7 @@ function UptimeForm(props) {
                     Resend alert
                     <div>
                         <input type="range" id="resend" name="resend" min="0" max="60" step="1" value={props.inputs.resend} onChange={props.handleRangeChange} />
-                        <span>{props.inputs.resend == '0' ? `Never` : `${props.inputs.resend} cycles`}</span>
+                        <span>{props.inputs.resend == '0' ? `Never` : `${props.inputs.resend} down cycles`}</span>
                     </div>
                 </label>
             </RangeStyles>

@@ -14,6 +14,7 @@ const RangeStyles = styled.div`
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         width: 100%;
         font-size: 1.4em;
         font-weight: 600;
@@ -33,7 +34,7 @@ const RangeStyles = styled.div`
             position: absolute;
             left: 0;
             top 140%;
-            width: 80px;
+            width: 110px;
             font-size: 14px;
             line-height: 1;
             font-weight: 400;
@@ -41,6 +42,10 @@ const RangeStyles = styled.div`
             text-align: center;
             transform-origin: center;
             transition: .7s ease-out;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
         }
     }
 
