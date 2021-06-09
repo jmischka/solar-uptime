@@ -7,7 +7,7 @@ function FormWrapper(props) {
     return (
         <FormWrapperStyles>
             <Header handleAddButton={props.handleAddButton} />
-            <UptimeForm inputs={props.inputs} handleInputChange={props.handleInputChange} handleRangeChange={props.handleRangeChange} handleCancelButton={props.handleCancelButton} handleSubmit={props.handleSubmit} />
+            <UptimeForm inputs={props.inputs} handleInputChange={props.handleInputChange} handleRangeChange={props.handleRangeChange} handleCancelButton={props.handleCancelButton} handleSubmit={props.handleSubmit} handleAddButton={props.handleAddButton} />
         </FormWrapperStyles>
     )
 }
@@ -18,7 +18,7 @@ FormWrapper.propTypes = {
     handleRangeChange:PropTypes.func,
     handleCancelButton:PropTypes.func,
     handleSubmit:PropTypes.func,
-    handleAddButton:PropTypes.func
+    handleAddButton:PropTypes.func,
 }
 
 export default FormWrapper;

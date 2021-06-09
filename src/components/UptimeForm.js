@@ -46,8 +46,8 @@ function UptimeForm(props) {
                 <label htmlFor="down">
                     Consider down after
                     <div>
-                        <input type="range" id="down" name="down" min={props.inputs.down < 10000 ? "100" : "1000"} max="30000" step={props.inputs.down < 10000 ? "100" : "1000"} value={props.inputs.down} onChange={props.handleRangeChange} />
-                        <span>{props.inputs.down < 9999 ? `${props.inputs.down * .1}ms timeout` : `${props.inputs.down * .001}s timeout`}</span>
+                        <input type="range" id="down" name="down" min={props.inputs.down < 2000 ? "10" : "1000"} max="30000" step={props.inputs.down < 2000 ? "10" : "1000"} value={props.inputs.down} onChange={props.handleRangeChange} />
+                        <span>{props.inputs.down < 1000 ? `${props.inputs.down}ms timeout` : `${Math.round(props.inputs.down * .001)}s timeout`}</span>
                     </div>
                 </label>
                 <label htmlFor="alert">
@@ -66,7 +66,7 @@ function UptimeForm(props) {
                 </label>
             </RangeStyles>
             <SubmitStyles>
-                <button className="cancel" type="button" onClick={props.handleCancelButton}>Cancel</button>
+                <button className="cancel" type="button" onClick={props.handleAddButton}>Cancel</button>
                 <button className="save" type="submit">Save</button>
             </SubmitStyles>
         </FormStyles>
@@ -78,6 +78,7 @@ UptimeForm.propTypes = {
     handleInputChange: PropTypes.func,
     handleRangeChange: PropTypes.func,
     handleSubmit: PropTypes.func,
+    handleAddButton:PropTypes.func,
     inputs: PropTypes.shape({
         alert: PropTypes.string,
         down: PropTypes.string,
