@@ -30,26 +30,26 @@ function useForm(initialState = {}) {
         let percent = (e.target.value - e.target.min) / (e.target.max - e.target.min) * 100;   
         e.target.nextElementSibling.style.left = `calc(${percent}% - 55px)`;
         // ACCOUNT FOR TOOLTIP OVERFLOW 
-        if (e.target.name === 'down' && e.target.value <= 1170) {
-            e.target.nextElementSibling.style.left = `calc(5.5% - 55px)`;
+        if (e.target.name === 'down' && e.target.value <= 2000) {
+            e.target.nextElementSibling.style.left = `calc(6.89655% - 55px)`;
         }
-        if (e.target.name === 'down' && e.target.value >= 29000) {
-            e.target.nextElementSibling.style.left = `calc(96% - 55px)`;
+        if (e.target.name === 'down' && e.target.value >= 28000) {
+            e.target.nextElementSibling.style.left = `calc(93.1034% - 55px)`;
         }
         if (e.target.name === 'alert' && e.target.value <= 2) {
-            e.target.nextElementSibling.style.left = `calc(3.33333% - 55px)`;
+            e.target.nextElementSibling.style.left = `calc(5% - 55px)`;
         }
-        if (e.target.name === 'alert' && e.target.value >= 58) {
-            e.target.nextElementSibling.style.left = `calc(96% - 55px)`;
+        if (e.target.name === 'alert' && e.target.value >= 56) {
+            e.target.nextElementSibling.style.left = `calc(93.3333% - 55px)`;
         }
         if (e.target.name === 'resend' && e.target.value < 1) {
             e.target.nextElementSibling.style.left = `calc(2% - 55px)`;
         } 
         if (e.target.name === 'resend' && e.target.value > 0 && e.target.value <= 3) {
-            e.target.nextElementSibling.style.left = `calc(5% - 55px)`;
+            e.target.nextElementSibling.style.left = `calc(6.66667% - 55px)`;
         }
-        if (e.target.name === 'resend' && e.target.value > 56) {
-            e.target.nextElementSibling.style.left = `calc(94% - 55px)`;
+        if (e.target.name === 'resend' && e.target.value >= 54) {
+            e.target.nextElementSibling.style.left = `calc(90% - 55px)`;
         }
         // SET RANGE PROGRESS ON CHANGE
         e.target.style.setProperty("--webkitProgressPercent", `${percent}%`);
